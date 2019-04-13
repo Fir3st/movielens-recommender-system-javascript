@@ -35,7 +35,7 @@ let moviesKeywordsPromise = new Promise((resolve) =>
 
 let ratingsPromise = new Promise((resolve) =>
   fs
-    .createReadStream('./src/data/ratings_small.csv')
+    .createReadStream('./src/data/ratings.csv')
     .pipe(csv({ headers: true }))
     .on('data', fromRatingsFile)
     .on('end', () => resolve(RATINGS)));
@@ -97,7 +97,6 @@ function init([ moviesMetaData, moviesKeywords, ratings ]) {
     addUserRating(ME_USER_ID, 'Reservoir Dogs', '3.0', MOVIES_IN_LIST),
     addUserRating(ME_USER_ID, 'Men in Black II', '3.0', MOVIES_IN_LIST),
     addUserRating(ME_USER_ID, 'Bad Boys II', '5.0', MOVIES_IN_LIST),
-    addUserRating(ME_USER_ID, 'Sissi', '1.0', MOVIES_IN_LIST),
     addUserRating(ME_USER_ID, 'Titanic', '1.0', MOVIES_IN_LIST),
   ];
 
